@@ -3,22 +3,39 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="filtro.css">
-  <title>Filtros en JS</title>
 </head>
 
-<body>
+<body class="bg-dark text-light"> 
+  
+<header> 
+  <h1>Lista de productos </h1> <!--Se sube la lista para mejor estructura--> 
+  <h2>Filtro en JS</h2> <!--Se asigna mejor este subtitulo para mejor estructura-->   
+</header> <!--Se cierra aquí el header--> 
 
+<main> 
   <div>
-      <input type="text" placeholder="Seleccioná un color o tipo">
+      <input type="text" placeholder="Seleccioná un color o tipo"> <!--Modifique el orden-->
       <button>Filtrar</button>
-      <h1>Lista de productos </h1>
-      <div id="lista-de-productos">
-    </div>
+      <div class="lista-de-productos">
+        <ul class="lista-de-productos"></ul> <!--Se agrega un ul para agregar lista de productos-->
+      </div>
   </div>
-  <script src="../filtro.js"></script>
-</body>
+ </main>
+<br> <!-- Se agrega saltos de línea-->
+<fieldset> 
+<legend> Datos del envio </legend> 
+<br> 
+<label for="Recoger en sucursal"> 
+  <input id="recoger-en-sucursal" type="radio" name="tipo-de-envio">Recoger en sucursal</label>
+<label for="Envio a domicilo">
+<input id="Envio-a-domicilio" type="radio" name="tipo-de-envio">Envio a domicilio</label>
+</fieldset> 
+<button type="submiit"> Enviar </button> <!--Se agrega para tener la opción de enviar los zapatos--> 
+ 
+<script src="/filtro.js"></script> <!--Se modifica la ruta de la carpeta porque están en la misma carpeta-->
 
+</body>
 </html>
