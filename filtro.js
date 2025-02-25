@@ -1,4 +1,10 @@
-// Tenemos un li de productos
+// Tenemos un li de productos 
+
+//const li = document.getElementsByName("#lista-de-productos"); 
+document.addEventListener("DOMContentLoaded", function(){ //Se agrega esta instrucción para que JavaScript espere hasta que todo el HTML se haya cargado
+  const li = document.querySelector( ".lista-de-productos" ); //Se agrega . ya que está declarado en CSS como una clase
+  //Se usa .querySelector ya que este llama a los elementos de CSS 
+
 
 const productos = [
   {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg"},
@@ -7,13 +13,6 @@ const productos = [
   {nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg"},
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
-
-//const li = document.getElementsByName("#lista-de-productos"); 
-document.addEventListener("DOMContentLoaded", function(){ //Se agrega esta instrucción para que JavaScript espere hasta que todo el HTML se haya cargado
-  const li = document.querySelector( ".lista-de-productos" ); //Se agrega . ya que está declarado en CSS como una clase
-  //Se usa .querySelector ya que este llama a los elementos de CSS 
-});
-
 
 for (let i = 0; i < productos.length; i++) {
   let d = document.createElement("div")
@@ -28,14 +27,17 @@ for (let i = 0; i < productos.length; i++) {
   imagen.alt = productos[i].img; //Agregue .alt porque deacuerdo a la documentación si en dado caso que la imagen no llega a aparecer se puede buscar por el texto alternativo. 
 
   d.appendChild(ti);
-  d.appendChild(imagen); //se agrega ; por buena práctica. 
+  d.appendChild(imagen); //se agrega ; por buena práctica.  
+  li.appendChild(d); //se delara li  
+} 
+});
 
  if(li){ //agrego la sntencia para evitar que si li no está en el DOM no siga con el ciclo
   li.appendChild(d);
  }else{ 
   console.log("No se encontro el producto"); 
  }  
-}
+
 
 displayProductos(productos);
 const botonDeFiltro = document.querySelector("button");
